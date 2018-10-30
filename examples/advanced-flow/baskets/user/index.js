@@ -19,11 +19,15 @@ const basket = {
 };
 
 // You can even export ready-to-use components
-export const UserState = createYield('UserState', basket);
-export const UserSelectedState = createYield(
-  'UserSelectedState',
-  basket,
-  selectors.getSelected
+export const UserState = createYield<State, typeof actions>(
+  'UserState',
+  basket
 );
+
+export const UserSelectedState = createYield<
+  State,
+  typeof actions,
+  $Call<typeof selectors.getSelected, State>
+>('UserSelectedState', basket, selectors.getSelected);
 
 export default basket;

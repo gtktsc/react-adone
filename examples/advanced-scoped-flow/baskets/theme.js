@@ -1,6 +1,6 @@
 // @flow
 
-import type { BasketAction } from 'react-adone';
+import { createYield, type BasketAction } from 'react-adone';
 
 type State = {
   color: string,
@@ -18,8 +18,15 @@ const actions = {
   },
 };
 
-export default {
+const basket = {
   key: 'theme',
   defaultState,
   actions,
 };
+
+export const ThemeYield = createYield<State, typeof actions>(
+  'ThemeYield',
+  basket
+);
+
+export default basket;

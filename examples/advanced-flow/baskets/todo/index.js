@@ -17,6 +17,9 @@ const basket = {
 };
 
 // You can even export ready-to-use components
-export const TodoState = createYield('TodoState', basket);
+export const TodoState = createYield<State, typeof actions>(
+  'TodoState',
+  basket
+);
 
 export default basket;
