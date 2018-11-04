@@ -12,7 +12,9 @@ src
 
 # Ignore examples
 examples
+docs
 
 # Ignore tests
 **/__tests__
 tests
+coverage
